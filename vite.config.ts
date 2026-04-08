@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
-import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -40,7 +39,9 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
   if (!entries.length) return;
   ensureLogDir();
   const logPath = path.join(LOG_DIR, `${source}.log`);
-  const lines = entries.map((entry) => `[${new Date().toISOString()}] ${JSON.stringify(entry)}`);
+  const lines = entries.map(
+    (entry) => `[${new Date().toISOString()}] ${JSON.stringify(entry)}`
+  );
   fs.appendFileSync(logPath, `${lines.join("\n")}\n`, "utf-8");
   trimLogFile(logPath, MAX_LOG_SIZE_BYTES);
 }
@@ -50,30 +51,51 @@ function vitePluginManusDebugCollector(): Plugin {
     name: "manus-debug-collector",
     transformIndexHtml(html) {
       if (process.env.NODE_ENV === "production") return html;
-      return { html, tags: [{ tag: "script", attrs: { src: "/__manus__/debug-collector.js", defer: true }, injectTo: "head" }] };
+      return {
+        html,
+        tags: [
+          {
+            tag: "script",
+            attrs: { src: "/__manus__/debug-collector.js", defer: true },
+            injectTo: "head",
+          },
+        ],
+      };
     },
     configureServer(server: ViteDevServer) {
       server.middlewares.use("/__manus__/logs", (req, res, next) => {
         if (req.method !== "POST") return next();
-        const handlePayload = (payload: any) => {
-          if (payload.consoleLogs?.length) writeToLogFile("browserConsole", payload.consoleLogs);
-          if (payload.networkRequests?.length) writeToLogFile("networkRequests", payload.networkRequests);
-          if (payload.sessionEvents?.length) writeToLogFile("sessionReplay", payload.sessionEvents);
-          res.writeHead(200, { "Content-Type": "application/json" });
-          res.end(JSON.stringify({ success: true }));
-        };
         let body = "";
         req.on("data", (chunk) => (body += chunk.toString()));
         req.on("end", () => {
-          try { handlePayload(JSON.parse(body)); } 
-          catch (e) { res.writeHead(400, { "Content-Type": "application/json" }); res.end(JSON.stringify({ success: false, error: String(e) })); }
+          try {
+            const payload = JSON.parse(body);
+            if (payload.consoleLogs?.length)
+              writeToLogFile("browserConsole", payload.consoleLogs);
+            if (payload.networkRequests?.length)
+              writeToLogFile("networkRequests", payload.networkRequests);
+            if (payload.sessionEvents?.length)
+              writeToLogFile("sessionReplay", payload.sessionEvents);
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ success: true }));
+          } catch (e) {
+            res.writeHead(400, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ success: false, error: String(e) }));
+          }
         });
       });
     },
   };
 }
 
-const plugins = [react(), tailwindcss(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+// =======================
+// VITE CONFIG
+// =======================
+const plugins = [
+  react(),
+  tailwindcss(),
+  vitePluginManusDebugCollector(),
+];
 
 export default defineConfig({
   plugins,
@@ -86,12 +108,29 @@ export default defineConfig({
   },
   envDir: path.resolve(import.meta.dirname),
   root: path.resolve(import.meta.dirname, "client"),
-  build: { outDir: path.resolve(import.meta.dirname, "dist/public"), emptyOutDir: true },
+
+  // ✅ BASE PATH for GitHub Pages
+  base: "/Portfolio/",
+
+  build: {
+    // ✅ Output folder
+    outDir: path.resolve(import.meta.dirname, "dist"),
+    emptyOutDir: true,
+  },
+
   server: {
     port: 3000,
     strictPort: false,
     host: true,
-    allowedHosts: [".manuspre.computer", ".manus.computer", ".manus-asia.computer", ".manuscomputer.ai", ".manusvm.computer", "localhost", "127.0.0.1"],
+    allowedHosts: [
+      ".manuspre.computer",
+      ".manus.computer",
+      ".manus-asia.computer",
+      ".manuscomputer.ai",
+      ".manusvm.computer",
+      "localhost",
+      "127.0.0.1",
+    ],
     fs: { strict: true, deny: ["**/.*"] },
   },
 });
