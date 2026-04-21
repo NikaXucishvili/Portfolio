@@ -11,10 +11,24 @@ const projectsData = [
     liveUrl: "https://play.google.com", // Play Store link
   },
   {
-    title: "AWS Cloud Practitioner Hands-On Labs",
+    title: "DevOps Monitoring Platform — 2026",
     description:
-      "Comprehensive hands-on labs demonstrating AWS cloud infrastructure setup and management. Launched and configured EC2 instances with SSH access and security groups. Set up VPC with public/private subnets, NAT Gateway, and Internet Gateway. Configured CloudWatch alarms with SNS email notifications.",
-    tags: ["AWS", "EC2", "VPC", "CloudWatch", "DevOps"],
+      "Built a full-stack monitoring dashboard using React (Vite) and Node.js with\n" +
+      "real-time CPU, RAM, Disk, and Network metrics visualization\n" +
+      "Containerized all services with Docker Compose including Prometheus, Node\n" +
+      "Exporter, and cAdvisor for system and container metrics\n" +
+      "Implemented a Jenkins CI/CD pipeline automating code pull, dependency\n" +
+      "install, frontend build, Docker image build, and deployment\n" +
+      "Designed alert system with critical/warning/normal states and session-based\n" +
+      "historical data tracking",
+    tags: [
+      "Docker",
+      "CI/CD",
+      "Jenkins",
+      "Frontend Dashboard",
+      "Backend API, Prometheus, Node Exporter, cAdvisor",
+    ],
+    liveUrl: "https://github.com/NikaXucishvili/devops-monitoring.git",
   },
   {
     title: "College Spectre Website",

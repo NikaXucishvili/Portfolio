@@ -17,11 +17,36 @@ const skillsData = [
     category: "Core DevOps & Cloud",
     skills: [
       { icon: Box, name: "Docker", description: "Containerization & images" },
-      { icon: Layers, name: "Kubernetes", description: "Container orchestration & clusters" },
-      { icon: Box, name: "AWS", description: "EC2, S3, IAM, VPC, CloudWatch, SNS" },
-      { icon: Terminal, name: "Linux", description: "Ubuntu system administration" },
-      { icon: Settings, name: "Git", description: "Version control & workflows" },
-      { icon: GitBranch, name: "GitHub Actions", description: "CI/CD automation" },
+      {
+        icon: Layers,
+        name: "Kubernetes",
+        description: "Container orchestration & clusters",
+      },
+      {
+        icon: Box,
+        name: "AWS",
+        description: "EC2, S3, IAM, VPC, CloudWatch, SNS",
+      },
+      {
+        icon: Terminal,
+        name: "Linux",
+        description: "Ubuntu system administration",
+      },
+      {
+        icon: Settings,
+        name: "Git",
+        description: "Version control & workflows",
+      },
+      {
+        icon: GitBranch,
+        name: "GitHub Actions",
+        description: "CI/CD automation",
+      },
+      {
+        icon: Settings,
+        name: "Jenkins",
+        description: "CI/CD build & deployment pipelines",
+      },
     ],
   },
   {
@@ -30,17 +55,33 @@ const skillsData = [
       { icon: Zap, name: "TCP/IP, UDP", description: "Network protocols" },
       { icon: Terminal, name: "SSH, DNS", description: "Network tools" },
       { icon: Settings, name: "Security Groups", description: "AWS security" },
-      { icon: Database, name: "NACL Rules", description: "Network access control" },
+      {
+        icon: Database,
+        name: "NACL Rules",
+        description: "Network access control",
+      },
     ],
   },
   {
     category: "Automation & Scripting",
     skills: [
       { icon: Code2, name: "Bash", description: "Shell scripting" },
-      { icon: Zap, name: "JavaScript (ES6+)", description: "Scripting & automation" },
+      {
+        icon: Zap,
+        name: "JavaScript (ES6+)",
+        description: "Scripting & automation",
+      },
       { icon: Terminal, name: "REST APIs", description: "API integration" },
-      { icon: Settings, name: "Troubleshooting", description: "System diagnostics" },
-      { icon: GitBranch, name: "CI/CD", description: "Continuous Integration & Deployment pipelines" },
+      {
+        icon: Settings,
+        name: "Troubleshooting",
+        description: "System diagnostics",
+      },
+      {
+        icon: GitBranch,
+        name: "CI/CD",
+        description: "Continuous Integration & Deployment pipelines",
+      },
     ],
   },
 ];
@@ -73,7 +114,6 @@ export default function Skills() {
             >
               {skillGroup.category}
             </motion.h3>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {skillGroup.skills.map((skill, index) => (
                 <SkillCard
@@ -88,7 +128,6 @@ export default function Skills() {
           </div>
         ))}
       </div>
-
       <SectionDivider />
     </section>
   );
