@@ -1,11 +1,5 @@
 # Nikoloz Khutsishvili — Portfolio
 
-> Personal portfolio of a Junior DevOps Engineer & Front-End Developer based in Tbilisi, Georgia.
-
-Live site: *coming soon* · [GitHub](https://github.com/NikaXucishvili) · [LinkedIn](https://linkedin.com/in/nika-khutsishvili-a5a4a3235)
-
----
-
 ## What's Inside
 
 A fully responsive, single-page portfolio built to showcase DevOps projects, frontend skills, and professional background. Designed with a dark theme, smooth scroll animations, and a clean component architecture.
