@@ -1,3 +1,156 @@
-# Nikoloz Khutsishvili - Personal Portfolio Website
+# Nikoloz Khutsishvili — Portfolio
 
-A modern, responsive personal portfolio website showcasing Junior DevOps Engineer and Front-End Developer skills, projects, and experience. Built with React, Vite, Tailwind CSS, and Framer Motion for smooth animations and professional aesthetics.\n\n## Features\n\nThe portfolio includes a comprehensive set of sections designed to showcase professional capabilities and projects:\n\n**Hero Section** features a striking introduction with the name, professional title, and call-to-action buttons for smooth navigation to projects and contact information.\n\n**About Me** section provides an overview of skills spanning front-end development (React, JavaScript, HTML, CSS), DevOps expertise (Docker, CI/CD, GitHub Actions), and IT fundamentals (Linux, networking basics).\n\n**Skills & Expertise** is organized into three categories: Frontend technologies, DevOps tools, and development platforms. Each skill is presented as an interactive card with icons and descriptions.\n\n**Featured Projects** showcase 6 portfolio projects with descriptions, technology stacks, GitHub repository links, and live demo links where available. Projects include a Dockerized Todo App, CI/CD Pipeline Project, React Dashboard UI, Microservices Architecture, Linux System Administration, and E-Commerce Frontend.\n\n**Experience & Learning** highlights the journey as a Junior DevOps Engineer with emphasis on continuous learning and skill development in both DevOps and front-end technologies.\n\n**Contact Section** provides multiple ways to get in touch: email, GitHub profile, and LinkedIn, with direct links and a call-to-action button.\n\n**Additional Features** include smooth scroll animations, gradient text effects, responsive design for mobile and desktop, dark theme with purple and cyan accent colors, and reusable component architecture.\n\n## Tech Stack\n\nThe project is built with modern web technologies:\n\n| Technology | Purpose |\n|---|---|\n| React 19 | UI framework and component architecture |\n| Vite | Fast build tool and development server |\n| Tailwind CSS 4 | Utility-first CSS framework for styling |\n| Framer Motion | Animation library for smooth transitions |\n| TypeScript | Type-safe JavaScript development |\n| shadcn/ui | Pre-built UI components |\n| Lucide React | Icon library |\n| Wouter | Lightweight client-side routing |\n\n## Project Structure\n\n```\nnikoloz-portfolio/\n├── client/\n│   ├── public/\n│   │   ├── favicon.ico\n│   │   ├── robots.txt\n│   │   └── manifest.json\n│   ├── src/\n│   │   ├── components/\n│   │   │   ├── Hero.tsx              # Hero section with introduction\n│   │   │   ├── About.tsx             # About me section\n│   │   │   ├── Skills.tsx            # Skills showcase\n│   │   │   ├── Projects.tsx          # Featured projects\n│   │   │   ├── Experience.tsx        # Experience & learning\n│   │   │   ├── Contact.tsx           # Contact information\n│   │   │   ├── Footer.tsx            # Footer with social links\n│   │   │   ├── ProjectCard.tsx       # Reusable project card\n│   │   │   ├── SkillCard.tsx         # Reusable skill card\n│   │   │   ├── SectionDivider.tsx    # Section divider component\n│   │   │   ├── ui/                   # shadcn/ui components\n│   │   │   └── ErrorBoundary.tsx     # Error handling\n│   │   ├── pages/\n│   │   │   ├── Home.tsx              # Main portfolio page\n│   │   │   └── NotFound.tsx          # 404 page\n│   │   ├── contexts/\n│   │   │   └── ThemeContext.tsx      # Theme management\n│   │   ├── lib/\n│   │   │   └── utils.ts              # Utility functions\n│   │   ├── App.tsx                   # Main app component with routing\n│   │   ├── main.tsx                  # React entry point\n│   │   └── index.css                 # Global styles and theme\n│   └── index.html                    # HTML template\n├── server/\n│   └── index.ts                      # Express server (for deployment)\n├── package.json                      # Project dependencies\n├── vite.config.ts                    # Vite configuration\n├── tailwind.config.ts                # Tailwind configuration\n├── tsconfig.json                     # TypeScript configuration\n└── README.md                         # This file\n```\n\n## Getting Started\n\n### Prerequisites\n\nEnsure you have the following installed on your system:\n\n- Node.js 18 or higher\n- npm or pnpm package manager\n\n### Installation\n\nClone the repository and install dependencies:\n\n```bash\ngit clone https://github.com/yourusername/nikoloz-portfolio.git\ncd nikoloz-portfolio\npnpm install\n```\n\nIf you prefer npm:\n\n```bash\nnpm install\n```\n\n### Development\n\nStart the development server with hot module replacement:\n\n```bash\npnpm dev\n```\n\nThe portfolio will be available at `http://localhost:3000`. The development server automatically reloads when you make changes to the code.\n\n### Building for Production\n\nCreate an optimized production build:\n\n```bash\npnpm build\n```\n\nThe build output will be in the `dist/` directory. The build process includes:\n\n- Minification of JavaScript and CSS\n- Asset optimization\n- Source map generation for debugging\n- Static file generation for deployment\n\n### Preview Production Build\n\nPreview the production build locally:\n\n```bash\npnpm preview\n```\n\n## Design System\n\nThe portfolio uses a dark theme with vibrant accent colors to convey technical sophistication and modern design aesthetics.\n\n**Color Palette:**\n- Background: Dark Slate (#0F172A)\n- Foreground: Light Indigo (#E0E7FF)\n- Primary Accent: Vibrant Purple (#A78BFA)\n- Secondary Accent: Cyan (#06B6D4)\n- Card Background: Slate (#1E293B)\n- Border: Slate (#334155)\n\n**Typography:**\n- Display Font: JetBrains Mono (monospace) for headlines - conveys technical credibility\n- Body Font: Inter (sans-serif) for readability and accessibility\n- Font Weights: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)\n\n**Animations:**\n- Fade-in animations on scroll (0.6s duration)\n- Smooth hover effects with scale transforms (1.05 scale)\n- Staggered animations for list items (0.1s delay between items)\n- Glow effects on interactive elements\n- Smooth scrolling behavior throughout the site\n\n## Customization\n\n### Updating Personal Information\n\nEdit the following files to customize the portfolio with your information:\n\n**Hero Section** (`client/src/components/Hero.tsx`):\n- Update name, title, and tagline\n- Modify call-to-action button text\n\n**About Section** (`client/src/components/About.tsx`):\n- Update personal description\n- Modify skill categories and descriptions\n\n**Skills Section** (`client/src/components/Skills.tsx`):\n- Edit `skillsData` array to add/remove skills\n- Update skill categories and descriptions\n\n**Projects Section** (`client/src/components/Projects.tsx`):\n- Edit `projectsData` array to add your projects\n- Update project descriptions, tags, GitHub URLs, and live demo links\n\n**Contact Section** (`client/src/components/Contact.tsx`):\n- Update email address\n- Modify GitHub and LinkedIn profile URLs\n\n**Footer** (`client/src/components/Footer.tsx`):\n- Update social media links\n- Modify footer text\n\n### Changing Colors\n\nModify the color scheme in `client/src/index.css`:\n\n```css\n:root {\n  --primary: #A78BFA;           /* Purple accent */\n  --secondary: #06B6D4;         /* Cyan accent */\n  --background: #0F172A;        /* Dark slate background */\n  --foreground: #E0E7FF;        /* Light text */\n  /* ... other colors ... */\n}\n```\n\n### Adding New Sections\n\nTo add new sections to the portfolio:\n\n1. Create a new component in `client/src/components/` (e.g., `Blog.tsx`)\n2. Import and add the component to `client/src/pages/Home.tsx`\n3. Use the same animation patterns and styling conventions for consistency\n\n## Deployment\n\n### GitHub Pages\n\nDeploy the portfolio to GitHub Pages for free hosting:\n\n1. **Create a GitHub Repository:**\n   - Go to GitHub and create a new repository named `nikoloz-portfolio`\n   - Initialize it as a public repository\n\n2. **Configure Vite for GitHub Pages:**\n   - Update `vite.config.ts` to set the correct base path:\n   ```typescript\n   export default defineConfig({\n     base: '/nikoloz-portfolio/',\n     // ... rest of config\n   })\n   ```\n\n3. **Build and Deploy:**\n   ```bash\n   # Build the project\n   pnpm build\n\n   # Deploy to gh-pages branch\n   git add dist -f\n   git commit -m \"Deploy to GitHub Pages\"\n   git push origin main\n   ```\n\n4. **Enable GitHub Pages:**\n   - Go to repository Settings → Pages\n   - Select \"Deploy from a branch\"\n   - Choose `gh-pages` branch and `/root` folder\n   - Save and wait for deployment to complete\n\n5. **Access Your Portfolio:**\n   - Your portfolio will be available at `https://yourusername.github.io/nikoloz-portfolio/`\n\n### Alternative: Using GitHub Actions\n\nFor automated deployment, create `.github/workflows/deploy.yml`:\n\n```yaml\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches: [main]\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: '18'\n      - run: pnpm install\n      - run: pnpm build\n      - uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./dist/public\n```\n\nThis workflow automatically builds and deploys your portfolio whenever you push to the main branch.\n\n### Other Hosting Options\n\nThe portfolio can be deployed to other platforms:\n\n**Vercel:**\n- Connect your GitHub repository to Vercel\n- Vercel automatically detects Vite and configures the build\n- Deployment happens automatically on every push\n\n**Netlify:**\n- Connect your GitHub repository to Netlify\n- Set build command to `pnpm build`\n- Set publish directory to `dist/public`\n- Deploy automatically on every push\n\n**Traditional Hosting:**\n- Run `pnpm build` locally\n- Upload the `dist/public` folder to your web server\n- Configure your server to serve `index.html` for all routes (for client-side routing)\n\n## Performance Optimization\n\nThe portfolio is optimized for fast loading and smooth performance:\n\n**Code Splitting:** Framer Motion and other heavy dependencies are loaded on-demand\n\n**Image Optimization:** Background images use modern formats and are served from CDN\n\n**CSS Optimization:** Tailwind CSS generates only the styles used in the project\n\n**Minification:** Production builds are fully minified and optimized\n\n**Lazy Loading:** Components use intersection observers for scroll-triggered animations\n\n## Browser Support\n\nThe portfolio works on all modern browsers:\n\n- Chrome/Edge 90+\n- Firefox 88+\n- Safari 14+\n- Mobile browsers (iOS Safari, Chrome Mobile)\n\n## Troubleshooting\n\n**Development server not starting:**\n- Clear node_modules: `rm -rf node_modules && pnpm install`\n- Clear Vite cache: `rm -rf .vite`\n- Restart the development server\n\n**Build errors:**\n- Check TypeScript errors: `pnpm check`\n- Ensure all dependencies are installed: `pnpm install`\n- Clear build cache: `rm -rf dist`\n\n**Animations not working:**\n- Ensure Framer Motion is installed: `pnpm install framer-motion`\n- Check browser console for errors\n- Verify that `whileInView` animations have `viewport={{ once: true }}` set\n\n**Styling issues:**\n- Clear Tailwind cache: `rm -rf .tailwindcss`\n- Ensure `index.css` is imported in `main.tsx`\n- Check that color variables are defined in `index.css`\n\n## Contributing\n\nThis is a personal portfolio project. To make improvements:\n\n1. Create a new branch for your changes\n2. Make your modifications\n3. Test thoroughly in development and production builds\n4. Commit with clear, descriptive messages\n5. Push and create a pull request\n\n## License\n\nThis project is open source and available under the MIT License. Feel free to use this portfolio template as a starting point for your own portfolio.\n\n## Support\n\nFor questions or issues:\n\n- Check the troubleshooting section above\n- Review the code comments in component files\n- Consult the documentation for React, Vite, Tailwind CSS, and Framer Motion\n- Open an issue on GitHub with detailed information about the problem\n\n## Acknowledgments\n\nThis portfolio was built with modern web technologies and best practices:\n\n- React and Vite for fast development and production builds\n- Tailwind CSS for utility-first styling\n- Framer Motion for smooth animations\n- shadcn/ui for accessible UI components\n- Lucide React for beautiful icons\n\n---\n\n**Built with ❤️ by Nikoloz Khutsishvili**\n
+> Personal portfolio of a Junior DevOps Engineer & Front-End Developer based in Tbilisi, Georgia.
+
+Live site: *coming soon* · [GitHub](https://github.com/NikaXucishvili) · [LinkedIn](https://linkedin.com/in/nika-khutsishvili-a5a4a3235)
+
+---
+
+## What's Inside
+
+A fully responsive, single-page portfolio built to showcase DevOps projects, frontend skills, and professional background. Designed with a dark theme, smooth scroll animations, and a clean component architecture.
+
+**Sections:** Hero · About · Skills · Projects · Experience · Contact
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | React 19 + Vite |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Animations | Framer Motion |
+| UI Components | shadcn/ui |
+| Icons | Lucide React |
+| Routing | Wouter |
+| Server | Express (Node.js) |
+
+---
+
+## Getting Started
+
+**Requirements:** Node.js 18+, npm or pnpm
+
+```bash
+# Clone and install
+git clone https://github.com/NikaXucishvili/nikoloz-portfolio.git
+cd nikoloz-portfolio
+pnpm install
+
+# Start dev server
+pnpm dev
+# → http://localhost:3000
+```
+
+```bash
+# Production build
+pnpm build
+
+# Preview production build locally
+pnpm preview
+```
+
+---
+
+## Project Structure
+
+```
+nikoloz-portfolio/
+├── client/
+│   └── src/
+│       ├── components/       # Hero, About, Skills, Projects, Experience, Contact
+│       ├── pages/            # Home, NotFound
+│       ├── contexts/         # ThemeContext
+│       └── lib/              # Utility functions
+├── server/
+│   └── index.ts              # Express server
+├── vite.config.ts
+├── tailwind.config.ts
+└── tsconfig.json
+```
+
+---
+
+## Customization
+
+All content lives in the individual section components under `client/src/components/`. To update your info:
+
+- **Personal details** → `Hero.tsx`, `Contact.tsx`, `Footer.tsx`
+- **Skills list** → `Skills.tsx` — edit the `skillsData` array
+- **Projects** → `Projects.tsx` — edit the `projectsData` array (title, description, tags, GitHub URL, live demo)
+- **Color scheme** → `client/src/index.css` CSS variables
+
+```css
+:root {
+  --primary: #A78BFA;     /* Purple accent */
+  --secondary: #06B6D4;   /* Cyan accent */
+  --background: #0F172A;  /* Dark slate */
+  --foreground: #E0E7FF;  /* Light text */
+}
+```
+
+---
+
+## Deployment
+
+### Vercel (recommended)
+Connect your GitHub repo to [Vercel](https://vercel.com). It auto-detects Vite and deploys on every push to `main`. Zero config needed.
+
+### Netlify
+- Build command: `pnpm build`
+- Publish directory: `dist/public`
+
+### GitHub Pages
+```bash
+# vite.config.ts — set base path first
+base: '/nikoloz-portfolio/'
+
+# Then build and push
+pnpm build
+git add dist -f && git commit -m "deploy" && git push
+```
+Enable Pages in repo Settings → Pages → deploy from `gh-pages` branch.
+
+### GitHub Actions (auto-deploy)
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with: { node-version: '18' }
+      - run: pnpm install && pnpm build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/public
+```
+
+---
+
+## Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| Dev server won't start | `rm -rf node_modules && pnpm install` |
+| Build errors | Run `pnpm check` for TypeScript issues |
+| Animations broken | Verify `viewport={{ once: true }}` on `whileInView` props |
+| Styles not applying | Confirm `index.css` is imported in `main.tsx` |
+
+---
+
+## License
+
+MIT — free to use as a template for your own portfolio.
+
+---
+
+*Built by Nikoloz Khutsishvili*
