@@ -8,7 +8,7 @@ const projectsData = [
     description:
       "Android application with birthday management functionality. Import birthdays from contacts or add manually. Birthdays are sorted by closest upcoming date for quick visibility. Includes push notifications one day before and on the day of the birthday. Multi-language support: Georgian, English, and Russian.",
     tags: ["Android", "Java", "Firebase", "Mobile"],
-    liveUrl: "https://play.google.com", // Play Store link
+    liveUrl: "https://play.google.com/store/apps/details?id=com.nikaxucishvili.birthdayreminder", // Play Store link
   },
   {
     title: "DevOps Monitoring Platform — 2026",
